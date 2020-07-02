@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Animated Starry night Banner</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+
+
+        <div class="scene">
+            <div class="moon"></div>
+
+            <img src="images/forest.png" alt="forest"
+                class="forest">
+
+            <img src="images/cloud1.png" alt="cloud1" class="cloud1">
+
+            <img src="images/cloud2.png" alt="cloud2" class="cloud2">
+
+            <img src="images/cloud3.png" alt="cloud3" class="cloud3">
+
+            <img src="images/cloud1.png" alt="cloud1" class="cloud4">
+
+            <img src="images/cloud2.png" alt="cloud2" class="cloud5">
+
+            <img src="images/cloud3.png" alt="cloud3" class="cloud6">
+
+
+        </div>
+
+        <script type="text/javascript">
+        function stars(){
+            let count = 500;
+            let scene = document.querySelector('.scene');
+            let i = 0;
+            while(i < count){
+                let star = document.createElement("i");
+                let x = Math.floor(Math.random() * window.innerWidth);
+                let y = Math.floor(Math.random() * window.innerHeight);
+                let duration = Math.random() * 10;
+                let size = Math.random() * 2;
+
+                star.style.left = x+'px';
+                star.style.top = y+'px';
+                star.style.width = 1+size+'px';
+                star.style.height = 1+size+'px';
+
+                star.style.animationDuration = 5+duration+ 's';
+                star.style.animationDelay = duration+ 's';
+
+                scene.appendChild(star);
+                i++;
+
+            }
+        }
+        stars();
+        </script>
+    </body>
+</html>
